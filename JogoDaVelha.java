@@ -64,7 +64,6 @@ public class JogoDaVelha {
                 }
             }
 
-            // Problema na hora de verificar o jogador 2
             int i = 0;
             if (jogo[0][i].equals("[X]") && jogo[0][i + 1].equals("[X]") && jogo[0][i + 2].equals("[X]")
                     || jogo[1][i].equals("[X]") && jogo[1][i + 1].equals("[X]") && jogo[1][i + 2].equals("[X]")
@@ -74,20 +73,20 @@ public class JogoDaVelha {
                     || jogo[i][2].equals("[X]") && jogo[i + 1][2].equals("[X]") && jogo[i + 2][2].equals("[X]")) {
                 System.out.println("O vencedor é: " + jogador1);
                 terminar = true;
-            } else if (jogo[0][i].equals("[O]") && jogo[0][i + 1].equals("[0]") && jogo[0][i + 2].equals("[0]")
-                    || jogo[1][i].equals("[0]") && jogo[1][i + 1].equals("[0]") && jogo[1][i + 2].equals("[0]")
-                    || jogo[2][i].equals("[0]") && jogo[2][i + 1].equals("[0]") && jogo[2][i + 2].equals("[0]")
-                    || jogo[i][0].equals("[0]") && jogo[i + 1][0].equals("[0]") && jogo[i + 2][0].equals("[0]")
-                    || jogo[i][1].equals("[0]") && jogo[i + 1][1].equals("[0]") && jogo[i + 2][1].equals("[0]")
-                    || jogo[i][2].equals("[0]") && jogo[i + 1][2].equals("[0]") && jogo[i + 2][2].equals("[0]")) {
+            } else if (jogo[0][i].equals("[O]") && jogo[0][i + 1].equals("[O]") && jogo[0][i + 2].equals("[O]")
+                    || jogo[1][i].equals("[O]") && jogo[1][i + 1].equals("[O]") && jogo[1][i + 2].equals("[O]")
+                    || jogo[2][i].equals("[O]") && jogo[2][i + 1].equals("[O]") && jogo[2][i + 2].equals("[O]")
+                    || jogo[i][0].equals("[O]") && jogo[i + 1][0].equals("[O]") && jogo[i + 2][0].equals("[O]")
+                    || jogo[i][1].equals("[O]") && jogo[i + 1][1].equals("[O]") && jogo[i + 2][1].equals("[O]")
+                    || jogo[i][2].equals("[O]") && jogo[i + 1][2].equals("[O]") && jogo[i + 2][2].equals("[O]")) {
                 System.out.println("O vencedor é: " + jogador2);
                 terminar = true;
             } else if (jogo[0][i].equals("[X]") && jogo[1][i + 1].equals("[X]") && jogo[2][i + 2].equals("[X]")
                     || jogo[2][i].equals("[X]") && jogo[1][i + 1].equals("[X]") && jogo[0][i + 2].equals("[X]")) {
                 System.out.println("O vencedor é: " + jogador1);
                 terminar = true;
-            } else if (jogo[0][i].equals("[0]") && jogo[1][i + 1].equals("[0]") && jogo[2][i + 2].equals("[0]")
-                    || jogo[2][i].equals("[0]") && jogo[1][i + 1].equals("[0]") && jogo[0][i + 2].equals("[0]")) {
+            } else if (jogo[0][i].equals("[O]") && jogo[1][i + 1].equals("[O]") && jogo[2][i + 2].equals("[O]")
+                    || jogo[2][i].equals("[O]") && jogo[1][i + 1].equals("[O]") && jogo[0][i + 2].equals("[O]")) {
                 System.out.println("O vencedor é: " + jogador2);
                 terminar = true;
             }
