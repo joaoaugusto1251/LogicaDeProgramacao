@@ -26,21 +26,145 @@ public class Questao4 extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        tf_entrada = new javax.swing.JTextField();
+        bt_verificar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        tf_saida = new javax.swing.JTextField();
+        bt_limpar = new javax.swing.JButton();
+        bt_sair = new javax.swing.JButton();
+
+        jLabel1.setText("NÚMEROS PRIMOS");
+
+        jLabel2.setText("Digite um número:");
+
+        bt_verificar.setText("VERIFICAR");
+        bt_verificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_verificarActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Resultado:");
+
+        tf_saida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_saidaActionPerformed(evt);
+            }
+        });
+
+        bt_limpar.setText("LIMPAR");
+        bt_limpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_limparActionPerformed(evt);
+            }
+        });
+
+        bt_sair.setText("SAIR");
+        bt_sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_sairActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(106, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(134, 134, 134))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tf_saida))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(bt_verificar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(bt_limpar, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                                    .addComponent(tf_entrada)))
+                            .addComponent(bt_sair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(108, 108, 108))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(tf_entrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bt_verificar)
+                    .addComponent(bt_limpar))
+                .addGap(59, 59, 59)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(tf_saida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(bt_sair)
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void bt_verificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_verificarActionPerformed
+        int num = Integer.parseInt(tf_entrada.getText());
+        int v[] = {2, 3, 5, 7};
+        boolean primo = true;
+        if (num != 2 && num != 3 && num != 5 && num != 7) {
+            for (int i = 0; i < v.length; i++) {
+                if (num % v[i] == 0) {
+                    primo = false;
+                }
+                if (primo == false) {
+                    break;
+                }
+            }
+        }
+        if (primo == false) {
+            tf_saida.setText("O valor não é primo");
+        } else if (num == 1) {
+            tf_saida.setText("O valor não é primo");
+        } else {
+            tf_saida.setText("O valor é primo");
+        }
+    }//GEN-LAST:event_bt_verificarActionPerformed
+
+    private void tf_saidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_saidaActionPerformed
+
+    }//GEN-LAST:event_tf_saidaActionPerformed
+
+    private void bt_limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_limparActionPerformed
+        tf_entrada.setText("");
+        tf_saida.setText("");
+    }//GEN-LAST:event_bt_limparActionPerformed
+
+    private void bt_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_sairActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_bt_sairActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_limpar;
+    private javax.swing.JButton bt_sair;
+    private javax.swing.JButton bt_verificar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField tf_entrada;
+    private javax.swing.JTextField tf_saida;
     // End of variables declaration//GEN-END:variables
 }

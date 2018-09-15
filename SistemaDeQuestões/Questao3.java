@@ -1,9 +1,11 @@
+
+import java.text.DecimalFormat;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author joaoa
@@ -26,21 +28,153 @@ public class Questao3 extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        tf_compra = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        tf_pago = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        bt_calcular = new javax.swing.JButton();
+        tf_resultado = new javax.swing.JTextField();
+        bt_sair = new javax.swing.JButton();
+
+        jLabel1.setText("PROBLEMA DO TROCO");
+
+        jLabel2.setText("Informe o valor da compra: R$");
+
+        jLabel3.setText("Informe o valor pago: R$");
+
+        bt_calcular.setText("CALCULAR");
+        bt_calcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_calcularActionPerformed(evt);
+            }
+        });
+
+        bt_sair.setText("SAIR");
+        bt_sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_sairActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tf_pago, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(85, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tf_compra, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(140, 140, 140)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(bt_calcular)
+                        .addGap(18, 18, 18)
+                        .addComponent(bt_sair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(tf_resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_compra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_pago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bt_calcular)
+                    .addComponent(bt_sair))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tf_resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void bt_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_calcularActionPerformed
+        Questao3 obj = new Questao3();
+        double valor_compra = Double.parseDouble(tf_compra.getText());
+        double valor_pago = Double.parseDouble(tf_pago.getText());
+        tf_resultado.setText(calculaTroco(valor_compra, valor_pago));
+    }//GEN-LAST:event_bt_calcularActionPerformed
+
+    private void bt_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_sairActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_bt_sairActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_calcular;
+    private javax.swing.JButton bt_sair;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField tf_compra;
+    private javax.swing.JTextField tf_pago;
+    private javax.swing.JTextField tf_resultado;
     // End of variables declaration//GEN-END:variables
+
+    public static String calculaTroco(double conta, double pago) {
+        DecimalFormat formatador = new DecimalFormat("###,##0.00");
+        if (pago < conta) {
+            return ("\nPagamento insuficiente, faltam R$"
+                    + formatador.format(conta - pago) + "\n");
+        } else {
+            int nota[] = {100, 50, 20, 10, 5, 2, 1};
+            int centavos[] = {50, 25, 10, 5, 1};
+
+            String result;
+            double troco;
+            int i, vlr, ct;
+
+            troco = pago - conta;
+            result = "\nTroco = R$" + formatador.format(troco) + "\n\n";
+            vlr = (int) troco;
+            i = 0;
+            while (vlr != 0) {
+                ct = vlr / nota[i];
+                if (ct != 0) {
+                    result = result + (ct + "nota(s) de R$" + nota[i] + "\n");
+                    vlr = vlr % nota[i];
+                }
+                i = i + 1;
+            }
+
+            result = result + "\n";
+            vlr = (int) Math.round((troco - (int) troco) * 100);
+            i = 0;
+            while (vlr != 0) {
+                ct = vlr / centavos[i];
+                if (ct != 0) {
+                    result = result + (ct + "moeda(s) de" + centavos[i]
+                            + "centavo(s)\n");
+                    vlr = vlr % centavos[i];
+                }
+                i = i + 1;
+            }
+            return (result);
+        }
+    }
 }

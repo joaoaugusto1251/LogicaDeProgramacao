@@ -12,12 +12,13 @@ public class Home extends javax.swing.JFrame {
 
     /**
      * Creates new form Home
-     */ 
+     */
     Questao1 questao1 = new Questao1();
     Questao2 questao2 = new Questao2();
     Questao3 questao3 = new Questao3();
     Questao4 questao4 = new Questao4();
     Questao5 questao5 = new Questao5();
+
     public Home() {
         initComponents();
     }
@@ -124,27 +125,27 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menu_questao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_questao1ActionPerformed
-        MostrarTelas(true, false, false, false, false);
+        CarregarTelas();
         questao1.setVisible(true);
     }//GEN-LAST:event_menu_questao1ActionPerformed
 
     private void menu_questao2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_questao2ActionPerformed
-        MostrarTelas(false, true, false, false, false);
+        CarregarTelas();
         questao2.setVisible(true);
     }//GEN-LAST:event_menu_questao2ActionPerformed
 
     private void menu_questao3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_questao3ActionPerformed
-        MostrarTelas(false, false, true, false, false);
+        CarregarTelas();
         questao3.setVisible(true);
     }//GEN-LAST:event_menu_questao3ActionPerformed
 
     private void menu_questao4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_questao4ActionPerformed
-        MostrarTelas(false, false, false, true, false);
+        CarregarTelas();
         questao4.setVisible(true);
     }//GEN-LAST:event_menu_questao4ActionPerformed
 
     private void menu_questao5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_questao5ActionPerformed
-        MostrarTelas(false, false, false, false, true);
+        CarregarTelas();
         questao5.setVisible(true);
     }//GEN-LAST:event_menu_questao5ActionPerformed
 
@@ -195,7 +196,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JMenuItem menu_questao5;
     // End of variables declaration//GEN-END:variables
 
-    public void MostrarTelas(boolean a, boolean b, boolean c, boolean d, boolean e){
+    public void CarregarTelas() {
         TelaInterna.add(questao1);
         TelaInterna.add(questao2);
         TelaInterna.add(questao3);
